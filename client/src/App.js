@@ -5,6 +5,7 @@ import ShowModal from './components/ShowModal'
 import { Provider } from 'react-redux';
 import store from './store';
 import { loadUser } from './actions/authActions'
+import "./App.css"
 
 class App extends Component {
   componentDidMount() {
@@ -13,7 +14,7 @@ class App extends Component {
   render(){
   return (
     <Provider store={store}>
-    <div className="App">
+    <div className="App" style={{backgroundColor:'red'}}>
       <Navbar />
       <ShowModal />
       <ShowList />
