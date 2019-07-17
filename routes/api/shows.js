@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const auth = require('../../middleware/auth')
 
 const Show = require('../../models/Show');
 
@@ -10,14 +11,14 @@ router.get('/', (req, res) => {
         .then(shows => res.json(shows))
 });
 
-router.post('/', (req, res) => {
+router.post('/', auth, (req, res) => {
     const newShow = new Show({
         venue: req.body.venue,
     })
     newShow.save().then(show => res.json(show))
 });
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', auth, (req, res) => {
     Show.findById(req.params.id)
     .then(show => show.remove().then(() => res.json({success:true}))
     )

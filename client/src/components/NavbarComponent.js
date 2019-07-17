@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import './NavbarComponent.css';
 import DrawerToggleButton from "./SideDrawer/DrawerToggleButton"
-
+import RegisterModal from './auth/RegisterModal'
+import Logout from './auth/Logout'
 
 const NavbarComponent = props => (
     <header className="toolbar">
@@ -16,7 +17,8 @@ const NavbarComponent = props => (
                 <ul>
                     <li><a href="/create">Add Show</a></li>
                     <li><a href="/user">Create User</a></li>
-                    <li><a href="/">Profile</a></li>
+                    <RegisterModal />
+                    <Logout />
                 </ul>
             </div>
 

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addShow } from '../actions/showActions';
 import Modal from 'react-modal'
-import uuid from 'uuid'
 
 class ShowModal extends Component {
     state = {
